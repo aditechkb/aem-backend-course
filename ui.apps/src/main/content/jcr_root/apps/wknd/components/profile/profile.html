@@ -1,0 +1,18 @@
+
+<img src="${properties.profilePicture}" alt="Profile Picture">
+<h2>${properties.candidateName}</h2>
+<p>Date of Birth: ${'dd-MM-yyyy' @ format=properties.dateOfBirth}</p>
+<p>Engineering Major: ${properties.engineeringMajor}</p>
+<p>Gender: ${properties.gender}</p>
+
+<p>Hobbies Listed Below:</p>
+<div data-sly-use.profileModel="com.adobe.aem.guides.wknd.core.models.ProfileModel">
+    <!-- Existing fields here -->
+    <ul data-sly-list.hobby="${profileModel.hobbies}">
+        <li>${hobby}</li>
+    </ul>
+
+    <ul data-sly-list.exp="${profileModel.previousExperience}">
+        <li>${exp.companyName}</li>
+    </ul>
+</div>

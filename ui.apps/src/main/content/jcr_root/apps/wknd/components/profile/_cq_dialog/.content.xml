@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Profile"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+>
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Properties"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <profilePicture
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Profile Picture"
+                                                    name="./profilePicture"
+                                                    required="{Boolean}true"
+                                            />
+                                            <candidateName
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Candidate Name"
+                                                    name="./candidateName"/>
+                                            <dateOfBirth
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                    fieldLabel="Date of Birth"
+                                                    name="./dateOfBirth"/>
+                                            <engineeringMajor
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Engineering Major"
+                                                    name="./engineeringMajor">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <cse
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="CSE"
+                                                            value="CSE"/>
+                                                    <eee
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="EEE"
+                                                            value="EEE"/>
+                                                    <ece
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="ECE"
+                                                            value="ECE"/>
+                                                    <mech
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="MECH"
+                                                            value="MECH"/>
+                                                </items>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cq-dialog-dropdown-showhide-target=".specialization-showhide"
+                                                        />
+                                            </engineeringMajor>
+                                            <specializationcontainer
+                                                    granite:class="specialization-showhide"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <specialization
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Specialization"
+                                                            name="./specialization"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-targetvalue="CSE"/>
+                                            </specializationcontainer>
+
+
+                                            <gender
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                    fieldLabel="Gender"
+                                                    name="./gender">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <male
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Male"
+                                                            value="Male"/>
+                                                    <female
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Female"
+                                                            value="Female"/>
+                                                    <other
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Other"
+                                                            value="Other"/>
+                                                </items>
+                                            </gender>
+                                            <hobbies
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    fieldLabel="Hobbies"
+                                                    >
+                                                <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        name="./hobbies"
+                                                        fieldLabel="hobbies"/>
+                                            </hobbies>
+
+                                        <!-- Previous Experience Multifield -->
+                                        <previousExperience
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Previous Experience"
+                                               >
+                                            <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./prevExperiences">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                        <companyName
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Company Name"
+                                                                name="./companyName"/>
+                                                        <startDate
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                                fieldLabel="Start Date"
+                                                                name="./startDate"/>
+                                                        <endDate
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                                fieldLabel="End Date"
+                                                                name="./endDate"/>
+                                                </items>
+                                            </field>
+                                        </previousExperience>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
