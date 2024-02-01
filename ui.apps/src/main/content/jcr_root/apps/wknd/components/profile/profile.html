@@ -2,7 +2,6 @@
 <img src="${properties.profilePicture}" alt="Profile Picture">
 <h2>${properties.candidateName}</h2>
 <p>Date of Birth: ${'dd-MM-yyyy' @ format=properties.dateOfBirth}</p>
-<p>Engineering Major: ${properties.engineeringMajor}</p>
 <p>Gender: ${properties.gender}</p>
 
 <p>Hobbies Listed Below:</p>
@@ -15,4 +14,10 @@
     <ul data-sly-list.exp="${profileModel.previousExperience}">
         <li>${exp.companyName}</li>
     </ul>
+
+    <p>Engineering Major: ${properties.engineeringMajor}</p>
+    <!-- Conditional field -->
+    <sly data-sly-test="${properties.engineeringMajor == 'CSE'}">
+        <p>Specialization: ${profileModel.specialization}</p>
+    </sly>
 </div>

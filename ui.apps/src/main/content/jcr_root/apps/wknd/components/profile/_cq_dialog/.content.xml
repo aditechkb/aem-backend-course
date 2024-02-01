@@ -46,6 +46,7 @@
                                                     fieldLabel="Date of Birth"
                                                     name="./dateOfBirth"/>
                                             <engineeringMajor
+                                                    granite:class="cq-dialog-dropdown-showhide"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                     fieldLabel="Engineering Major"
@@ -70,11 +71,10 @@
                                                 </items>
                                                 <granite:data
                                                         jcr:primaryType="nt:unstructured"
-                                                        cq-dialog-dropdown-showhide-target=".specialization-showhide"
-                                                        />
+                                                        cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
                                             </engineeringMajor>
                                             <specializationcontainer
-                                                    granite:class="specialization-showhide"
+                                                    granite:class="hide list-option-listfrom-showhide-target"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -85,8 +85,8 @@
                                                             name="./specialization"/>
                                                 </items>
                                                 <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    cq-dialog-dropdown-showhide-targetvalue="CSE"/>
+                                                        jcr:primaryType="nt:unstructured"
+                                                        showhidetargetvalue="CSE"/>
                                             </specializationcontainer>
 
 
