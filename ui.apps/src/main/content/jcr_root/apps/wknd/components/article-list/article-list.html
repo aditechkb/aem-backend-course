@@ -1,0 +1,21 @@
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories = 'articlelist.clientlib' }"></sly>
+
+<div class="cmp-article-list">
+    <h1 class="cmp-article-list__heading">Article List</h1>
+    <sly data-sly-use.model = "com.adobe.aem.guides.wknd.core.models.ArticleListModel">
+        <div class="cmp-article-list__cards-container">
+            <sly data-sly-list.articleList="${model.articleListDataBeans}">
+                <div class="cmp-article-list__cards">
+                    <div class="cmp-article-list__card-title">${articleList.title}</div>
+                    <div class="cmp-article-list__card-description">${articleList.description}</div>
+                    <div class="cmp-article-list__card_btn_container">
+                        <a href="${articleList.path}.html" class="cmp-article-list__card-btn">Explore</a>
+                    </div>
+                </div>
+            </sly>
+        </div>
+
+    </sly>
+</div>
